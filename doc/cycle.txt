@@ -1,0 +1,17 @@
+*cycle.txt*   Quickly toggle between related words.
+
+ABOUT                                                                   *cycle*
+
+Cycle.vim allows you to toggle between pairs or lists of related words. The
+default mappings are the same as those with which you can increment and decrement
+a number under the cursor — <C-A> and <C-X>, respectively.
+
+
+CUSTOMIZATION
+
+You can add your own word groups: >
+  call AddCycleGroup(['one', 'two', 'three'])
+<
+
+ vim:tw=78:ts=8:ft=help:norl: 
+
