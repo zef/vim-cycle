@@ -1,0 +1,22 @@
+h1. Cycle.vim
+
+A vim plugin that allows you to toggle between pairs or lists of related words. The
+default mappings are the same as those with which you can increment and decrement
+a number under the cursor — @<C-A>@ and @<C-X>@, respectively.
+
+h2. Customization
+
+You can add your own word groups too:
+
+<pre><code>
+  call AddCycleGroup(['one', 'two', 'three'])
+</code></pre>
+
+h2. Todo
+
+# Filetype specific cycle groups (see endwise.vim for inspiration)
+# The ability to handle pairs: quotes, brackets, html tags, etc.
+# Operate on non-lowercase text and retain case
+# Allow work on substrings - 8px to 8%
+# Put cursor back at beginning of word if it started there
+
