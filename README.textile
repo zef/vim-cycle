@@ -20,3 +20,8 @@ h2. Todo
 # Allow work on substrings - 8px to 8%
 # Put cursor back at beginning of word if it started there
 
+h2. Bugs
+
+# Does not work with speeddating.vim - currently won't work if speeddating is installed.
+# Calling Cycle from whitespace before a matching word does not behave well.
+

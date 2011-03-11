@@ -59,11 +59,11 @@ function! s:Cycle(word, direction)
   " echo(string(groups)) 
 
   if empty(groups)
-    if exists("g:loaded_speeddating")
-      echo 'speed dating!'
-    else
-      echo 'no speed dating'
-    endif
+    " if exists("g:loaded_speeddating")
+    "   echo 'speed dating!'
+    " else
+    "   echo 'no speed dating'
+    " endif
       
     if a:direction == 1
       exe "norm! \<C-A>"
@@ -88,7 +88,7 @@ endfunction
 
 
 
-call AddCycleGroup(['one', 'two', 'three'])
+" call AddCycleGroup(['one', 'two', 'three'])
 
 " Ruby
 call AddCycleGroup(['else', 'elsif'])
