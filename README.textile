@@ -17,7 +17,7 @@ h2. Todo
 # Filetype specific cycle groups (see endwise.vim for inspiration)
 # The ability to handle pairs: quotes, brackets, html tags, etc.
 # Operate on non-lowercase text and retain case
-# Allow work on substrings - 8px to 8%
+# Allow work on substrings - 8px, 8%, 8em
 # Put cursor back at beginning of word if it started there
 
 h2. Bugs
