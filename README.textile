@@ -2,7 +2,7 @@ h1. Cycle.vim
 
 A vim plugin that allows you to toggle between pairs or lists of related words. The
 default mappings are the same as those with which you can increment and decrement
-a number under the cursor: @<C-A>@ and @<C-X>@, respectively.
+a number under the cursor: <code><C-A></code> and <code><C-X></code>, respectively.
 
 h2. Customization
 

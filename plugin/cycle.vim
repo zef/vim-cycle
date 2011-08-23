@@ -1,9 +1,9 @@
 " cycle.vim - Toggle between related words
 
-if exists("g:loaded_cycle")
-  finish
-endif
-let g:loaded_cycle = 1
+" if exists("g:loaded_cycle")
+"   finish
+" endif
+" let g:loaded_cycle = 1
 
 let s:options = [
   \ ['==', '!='],
@@ -13,6 +13,7 @@ let s:options = [
   \ ['if', 'unless'],
   \ ['true', 'false'],
   \ ['YES', 'NO'],
+  \ ['first', 'last'],
 \]
 
 " CSS/Sass/JavaScript/HTML
@@ -22,6 +23,7 @@ let s:options = s:options + [
   \ ['top', 'bottom'],
   \ ['margin', 'padding'],
   \ ['height', 'width'],
+  \ ['absolute', 'relative'],
   \ ['div', 'p', 'span'],
   \ ['h1', 'h2', 'h3'],
   \ ['png', 'jpg', 'gif'],
@@ -67,10 +69,17 @@ function! s:Cycle(word, direction)
 endfunction
 
 " Need to implement system to include things like this based on filetype
-" Ruby
+" Ruby (or Rails)
 call AddCycleGroup(['else', 'elsif'])
+call AddCycleGroup(['include', 'require'])
+call AddCycleGroup(['class', 'module'])
+call AddCycleGroup(['Time', 'Date'])
+call AddCycleGroup(['present', 'blank'])
 
-
+" js/jQuery
+call AddCycleGroup(['show', 'hide'])
+call AddCycleGroup(['mouseover', 'mouseout'])
+call AddCycleGroup(['mouseenter', 'mouseleave'])
 
 nnoremap <silent> <Plug>CycleNext   :<C-U>call <SID>Cycle(expand("<cword>"), 1)<CR>
 nnoremap <silent> <Plug>CyclePrevious :<C-U>call <SID>Cycle(expand("<cword>"), -1)<CR>
