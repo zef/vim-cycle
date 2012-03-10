@@ -6,15 +6,38 @@ a number under the cursor: <code><C-A></code> and <code><C-X></code>, respective
 
 h2. Customization
 
-You can add your own word groups too:
+You can add your own word groups:
 
 <pre><code>
   call AddCycleGroup(['one', 'two', 'three'])
 </code></pre>
 
+To deal with conflicts, Cycle.vim also supports adding groups that are specific
+to a certain filetype:
+
+<pre><code>
+  call AddCycleGroup('ruby', ['class', 'module'])
+  call AddCycleGroup('python', ['else', 'elif'])
+</code></pre>
+
+When multiple groups define the same word, groups belonging to specific
+filetypes will be used instead of global groups. This is useful in the cases
+above, since in HTML we would want 'class' to cycle with 'id' and Python uses
+'elif' while some other languages use 'elsif'.
+
+Providing a list of filetypes is also supported:
+
+<pre><code>
+  call AddCycleGroup(['ruby', 'eruby', 'perl'], ['else', 'elsif'])
+</code></pre>
+
+However, if there are no conflicting cases it is preferable to define all
+cycle groups in the global namespace, using filetype-specific groups only in
+case of conflict. Instead of specifying multiple languages we define that
+group in the global space and override it only for python.
+
 h2. Todo
 
-# Filetype specific cycle groups (see endwise.vim for inspiration)
 # The ability to handle pairs: quotes, brackets, html tags, etc.
 # Operate on non-lowercase text and retain case
 # Allow work on substrings - 8px, 8%, 8em
