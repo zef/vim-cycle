@@ -78,7 +78,7 @@ function! AddCycleGroup(filetypes_or_group, ...)
   endfor
 endfunction
 
-function! s:Cycle(word, direction)
+function! s:Cycle(direction)
   let filetype = &ft
   let match = []
 
@@ -197,8 +197,8 @@ call AddCycleGroup('ruby', ['class', 'module'])
 call AddCycleGroup(['ruby', 'eruby', 'perl'], ['else', 'elsif'])
 call AddCycleGroup('python', ['else', 'elif'])
 
-nnoremap <silent> <Plug>CycleNext     :<C-U>call <SID>Cycle(expand("<cword>"),  1)<CR>
-nnoremap <silent> <Plug>CyclePrevious :<C-U>call <SID>Cycle(expand("<cword>"), -1)<CR>
+nnoremap <silent> <Plug>CycleNext     :<C-U>call <SID>Cycle(1)<CR>
+nnoremap <silent> <Plug>CyclePrevious :<C-U>call <SID>Cycle(-1)<CR>
 
 if !exists("g:cycle_no_mappings") || !g:cycle_no_mappings
   nmap  <C-A>     <Plug>CycleNext
