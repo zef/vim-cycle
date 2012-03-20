@@ -29,7 +29,7 @@ let s:options['global'] = s:options['global'] + [
   \ ['px', '%', 'em'],
   \ ['left', 'right'],
   \ ['top', 'bottom'],
-  \ ['margin', 'margin'],
+  \ ['margin', 'padding'],
   \ ['height', 'width'],
   \ ['absolute', 'relative'],
   \ ['h1', 'h2', 'h3'],
