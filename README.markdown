@@ -1,7 +1,9 @@
 Cycle.vim
 =========
 
-A vim plugin that allows you to toggle between pairs or lists of related words.
+A Vim plugin that allows you to toggle between pairs or lists of related words.
+Use by placing your cursor on a word, like `left`, and press `control-a`.
+The word will be replaced with `right`.
 The default mappings are the same as those with which you can increment and
 decrement a number under the cursor: `<C-A>` and `<C-X>`, respectively.
 
