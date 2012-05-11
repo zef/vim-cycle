@@ -46,6 +46,7 @@ let s:options['global'] = s:options['global'] + [
   \ ['Time', 'Date'],
   \ ['present', 'blank'],
   \ ['while', 'until'],
+  \ ['match', 'get', 'post', 'put']
 \]
 
 " Takes one or two arguments:
