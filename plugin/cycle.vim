@@ -24,6 +24,7 @@ let s:options['global'] = [
 " css/sass/javascript/html
 let s:options['global'] = s:options['global'] + [
   \ ['div', 'p', 'span'],
+  \ ['max', 'min'],
   \ ['ul', 'ol'],
   \ ['class', 'id'],
   \ ['px', '%', 'em'],
