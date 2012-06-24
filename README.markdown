@@ -7,6 +7,9 @@ The word will be replaced with `right`.
 The default mappings are the same as those with which you can increment and
 decrement a number under the cursor: `<C-A>` and `<C-X>`, respectively.
 
+Check out [the code](https://github.com/zef/vim-cycle/blob/master/plugin/cycle.vim)
+to see what cycle groups are included by default.
+
 Customization
 -------------
 
