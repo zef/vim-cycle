@@ -36,6 +36,7 @@ let s:options['global'] = s:options['global'] + [
   \ ['h1', 'h2', 'h3'],
   \ ['png', 'jpg', 'gif'],
   \ ['linear', 'radial'],
+  \ ['horizontal', 'vertical'],
   \ ['show', 'hide'],
   \ ['mouseover', 'mouseout'],
   \ ['mouseenter', 'mouseleave'],
