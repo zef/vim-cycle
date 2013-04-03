@@ -47,6 +47,7 @@ let s:options['global'] = s:options['global'] + [
   \ ['slow', 'fast'],
   \ ['small', 'large'],
   \ ['even', 'odd'],
+  \ ['inside', 'outside'],
 \]
 
 " ruby/eruby
