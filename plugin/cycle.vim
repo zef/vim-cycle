@@ -17,6 +17,7 @@ let s:options['global'] = [
   \ ['if', 'unless'],
   \ ['true', 'false'],
   \ ['YES', 'NO'],
+  \ ['on', 'off'],
   \ ['first', 'last'],
   \ ['else', 'else if'],
 \]
