@@ -111,9 +111,9 @@ function! s:Cycle(direction)
     " endif
 
     if a:direction == 1
-      exe "norm! \<C-A>"
+      exe "norm! " . v:count1 . "\<C-A>"
     else
-      exe "norm! \<C-X>"
+      exe "norm! " . v:count1 . "\<C-X>"
     endif
   else
     let [group, start, end, string] = match
