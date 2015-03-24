@@ -49,6 +49,7 @@ let s:options['global'] = s:options['global'] + [
   \ ['small', 'large'],
   \ ['even', 'odd'],
   \ ['inside', 'outside'],
+  \ ['push', 'pull'],
 \]
 
 " ruby/eruby
@@ -58,6 +59,8 @@ let s:options['global'] = s:options['global'] + [
   \ ['present', 'blank'],
   \ ['while', 'until'],
   \ ['only', 'except'],
+  \ ['create', 'update'],
+  \ ['new', 'edit'],
   \ ['match', 'get', 'post', 'put']
 \]
 
