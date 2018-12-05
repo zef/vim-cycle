@@ -61,7 +61,7 @@ let s:options['global'] = s:options['global'] + [
   \ ['only', 'except'],
   \ ['create', 'update'],
   \ ['new', 'edit'],
-  \ ['match', 'get', 'post', 'put']
+  \ ['get', 'post', 'put', 'patch']
 \]
 
 " Takes one or two arguments:
@@ -212,6 +212,12 @@ endfunction
 call AddCycleGroup('ruby', ['class', 'module'])
 call AddCycleGroup(['ruby', 'eruby', 'perl'], ['else', 'elsif'])
 call AddCycleGroup('python', ['else', 'elif'])
+
+" Swift
+call AddCycleGroup('swift', ['let', 'var'])
+call AddCycleGroup('swift', ['open', 'public', 'internal', 'fileprivate', 'private'])
+call AddCycleGroup('swift', ['class', 'struct', 'enum', 'protocol', 'extension'])
+call AddCycleGroup('swift', ['set', 'get'])
 
 nnoremap <silent> <Plug>CycleNext     :<C-U>call <SID>Cycle(1)<CR>
 nnoremap <silent> <Plug>CyclePrevious :<C-U>call <SID>Cycle(-1)<CR>
