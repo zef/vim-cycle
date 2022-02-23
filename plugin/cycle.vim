@@ -20,6 +20,8 @@ let s:options['global'] = [
   \ ['yes', 'no'],
   \ ['on', 'off'],
   \ ['running', 'stopped'],
+  \ ['enabled', 'disabled'],
+  \ ['present', 'absent'],
   \ ['first', 'last'],
   \ ['else', 'else if'],
 \]
