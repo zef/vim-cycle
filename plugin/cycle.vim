@@ -55,6 +55,7 @@ if !exists("g:cycle_override_defaults")
       \ ['even', 'odd'],
       \ ['inside', 'outside'],
       \ ['push', 'pull'],
+      \ ['header', 'footer'],
     \]
 
     " ruby/eruby
