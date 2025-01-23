@@ -7,66 +7,71 @@
 
 let s:options = {}
 
-let s:options['global'] = [
-  \ ['==', '!='],
-  \ ['_', '-'],
-  \ [' + ', ' - '],
-  \ ['-=', '+='],
-  \ ['&&', '||'],
-  \ ['and', 'or'],
-  \ ['if', 'unless'],
-  \ ['true', 'false'],
-  \ ['YES', 'NO'],
-  \ ['yes', 'no'],
-  \ ['on', 'off'],
-  \ ['running', 'stopped'],
-  \ ['enabled', 'disabled'],
-  \ ['present', 'absent'],
-  \ ['first', 'last'],
-  \ ['else', 'else if'],
-\]
+let s:options['global'] = []
 
-" css/sass/javascript/html
-let s:options['global'] = s:options['global'] + [
-  \ ['div', 'p', 'span'],
-  \ ['max', 'min'],
-  \ ['ul', 'ol'],
-  \ ['class', 'id'],
-  \ ['px', '%', 'em'],
-  \ ['left', 'right'],
-  \ ['top', 'bottom'],
-  \ ['margin', 'padding'],
-  \ ['height', 'width'],
-  \ ['absolute', 'relative'],
-  \ ['h1', 'h2', 'h3'],
-  \ ['png', 'jpg', 'gif'],
-  \ ['linear', 'radial'],
-  \ ['horizontal', 'vertical'],
-  \ ['show', 'hide'],
-  \ ['mouseover', 'mouseout'],
-  \ ['mouseenter', 'mouseleave'],
-  \ ['add', 'remove'],
-  \ ['up', 'down'],
-  \ ['before', 'after'],
-  \ ['text', 'html'],
-  \ ['slow', 'fast'],
-  \ ['small', 'large'],
-  \ ['even', 'odd'],
-  \ ['inside', 'outside'],
-  \ ['push', 'pull'],
-\]
+if !exists("g:cycle_override_defaults")
+    let s:options['global'] = [
+      \ ['==', '!='],
+      \ ['_', '-'],
+      \ [' + ', ' - '],
+      \ ['-=', '+='],
+      \ ['&&', '||'],
+      \ ['and', 'or'],
+      \ ['if', 'unless'],
+      \ ['true', 'false'],
+      \ ['YES', 'NO'],
+      \ ['yes', 'no'],
+      \ ['on', 'off'],
+      \ ['running', 'stopped'],
+      \ ['enabled', 'disabled'],
+      \ ['present', 'absent'],
+      \ ['first', 'last'],
+      \ ['else', 'else if'],
+    \]
 
-" ruby/eruby
-let s:options['global'] = s:options['global'] + [
-  \ ['include', 'require'],
-  \ ['Time', 'Date'],
-  \ ['present', 'blank'],
-  \ ['while', 'until'],
-  \ ['only', 'except'],
-  \ ['create', 'update'],
-  \ ['new', 'edit'],
-  \ ['get', 'post', 'put', 'patch']
-\]
+    " css/sass/javascript/html
+    let s:options['global'] = s:options['global'] + [
+      \ ['div', 'p', 'span'],
+      \ ['max', 'min'],
+      \ ['ul', 'ol'],
+      \ ['class', 'id'],
+      \ ['px', '%', 'em'],
+      \ ['left', 'right'],
+      \ ['top', 'bottom'],
+      \ ['margin', 'padding'],
+      \ ['height', 'width'],
+      \ ['absolute', 'relative'],
+      \ ['h1', 'h2', 'h3'],
+      \ ['png', 'jpg', 'gif'],
+      \ ['linear', 'radial'],
+      \ ['horizontal', 'vertical'],
+      \ ['show', 'hide'],
+      \ ['mouseover', 'mouseout'],
+      \ ['mouseenter', 'mouseleave'],
+      \ ['add', 'remove'],
+      \ ['up', 'down'],
+      \ ['before', 'after'],
+      \ ['text', 'html'],
+      \ ['slow', 'fast'],
+      \ ['small', 'large'],
+      \ ['even', 'odd'],
+      \ ['inside', 'outside'],
+      \ ['push', 'pull'],
+      \ ['header', 'footer'],
+    \]
+
+    " ruby/eruby
+    let s:options['global'] = s:options['global'] + [
+      \ ['include', 'require'],
+      \ ['Time', 'Date'],
+      \ ['present', 'blank'],
+      \ ['while', 'until'],
+      \ ['only', 'except'],
+      \ ['create', 'update'],
+      \ ['new', 'edit'],
+      \ ['get', 'post', 'put', 'patch']
+    \]
+endif
 
 " Takes one or two arguments:
 "
@@ -212,16 +217,22 @@ function! s:match(...)
 endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" language specific overrides:
-call AddCycleGroup('ruby', ['class', 'module'])
-call AddCycleGroup(['ruby', 'eruby', 'perl'], ['else', 'elsif'])
-call AddCycleGroup('python', ['else', 'elif'])
+if !exists("g:cycle_override_defaults")
+    " language specific overrides:
+    call AddCycleGroup('ruby', ['class', 'module'])
+    call AddCycleGroup(['ruby', 'eruby', 'perl'], ['else', 'elsif'])
+    call AddCycleGroup('python', ['else', 'elif'])
 
-" Swift
-call AddCycleGroup('swift', ['let', 'var'])
-call AddCycleGroup('swift', ['open', 'public', 'internal', 'fileprivate', 'private'])
-call AddCycleGroup('swift', ['class', 'struct', 'enum', 'protocol', 'extension'])
-call AddCycleGroup('swift', ['set', 'get'])
+    " Swift
+    call AddCycleGroup('swift', ['let', 'var'])
+    call AddCycleGroup('swift', ['open', 'public', 'internal', 'fileprivate', 'private'])
+    call AddCycleGroup('swift', ['class', 'struct', 'enum', 'protocol', 'extension'])
+    call AddCycleGroup('swift', ['set', 'get'])
+else
+  for group in g:cycle_override_defaults
+    call AddCycleGroup(group[0], group[1])
+  endfor
+endif
 
 nnoremap <silent> <Plug>CycleNext     :<C-U>call <SID>Cycle(1)<CR>
 nnoremap <silent> <Plug>CyclePrevious :<C-U>call <SID>Cycle(-1)<CR>
