@@ -44,10 +44,10 @@ when they are not desired.
 You may also clear all the hard coded pairs and work entirely with your own pairs.
 Use the following code to initialize your own variables at startup in your vimrc file:
 
-    g:cycle_override_defaults = [
-        ['global', ['true', 'false']],
-        ['ruby', ['class', 'module']],
-    ]
+    let g:cycle_override_defaults = [
+      \ ['global', ['true', 'false']],
+      \ ['ruby', ['class', 'module']],
+    \]
 
 This will initialize vim-cycle with only 2 pairs of cycles: one will be set globally
 and the other one will apply only to the ruby filetype.
