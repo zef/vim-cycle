@@ -23,6 +23,8 @@ if !exists("g:cycle_override_defaults")
       \ ['yes', 'no'],
       \ ['on', 'off'],
       \ ['running', 'stopped'],
+      \ ['enabled', 'disabled'],
+      \ ['present', 'absent'],
       \ ['first', 'last'],
       \ ['else', 'else if'],
     \]
